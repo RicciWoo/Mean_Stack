@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://angularjs.org">
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <% if (userFullName) { %>
+      <h2>Hello <%=userFullName%> </h2>
+      <a href="/signout">Sign out</a>
+    <% } else { %>
+      <a href="/signup">Signup</a>
+      <a href="/signin">Signin</a>
+    <% } %>
+
+    <section ng-include="'example/views/example.client.view.html'"></section>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+
+    <script type="text/javascript" src="/example/example.client.module.js"></script>
+
+    <script type="text/javascript" src="/application.js"></script>
+  </body>
+</html>

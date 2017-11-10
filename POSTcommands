@@ -1,0 +1,50 @@
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"name":"Jayendra"}' http://silo.soic.indiana.edu:54545/sayHello
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"email":"jayendrakhandare@gmail.com","username":"jkhandar","firstname":"Jayendra","lastname":"Khandare","password":"jkhandar"}' http://localhost:23456/addingUser
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jkhandar","newname":"jay"}' http://localhost:23456/updatingUser
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"ID":"10"}' http://localhost:23456/getGroupAdmins
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay"}' http://localhost:23456/getName
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay"}' http://localhost:23456/getPublications
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay"}' http://localhost:23456/getGroups
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay"}' http://localhost:23456/getUniversity
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay"}' http://localhost:23456/getAdvisor
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay"}' http://localhost:23456/getLocation
+
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay","university":"IUB","city":"Btown","state":"IN","country":"US","dob":"03/09/1991","primaryAdvisor":"Lawda","secondaryAdvisor":"Lasun"}' http://localhost:23456/setUserInfo
+
+
+
+
+
+#cannot do without setting 1
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jkhandar","verificationnumber":"1"}' http://localhost:23456/checkingVerif
+
+
+#cannot do without verification
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jay","password":"jkhandar"}' http://localhost:23456/checkingUser
+
+#cannot do
+curl -v -H "Content-Type: application/json" -X POST \
+     -d '{"username":"jkhandar"}' http://localhost:23456/deletingUser
+
