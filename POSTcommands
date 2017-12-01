@@ -11,7 +11,7 @@ curl -v -H "Content-Type: application/json" -X POST \
      -d '{"ID":"10"}' http://localhost:23456/getGroupAdmins
 
 curl -v -H "Content-Type: application/json" -X POST \
-     -d '{"username":"jay"}' http://localhost:23456/getName
+     -d 'Content-Type: application/json' http://localhost:23456/getName
 
 curl -v -H "Content-Type: application/json" -X POST \
      -d '{"username":"jay"}' http://localhost:23456/getPublications
@@ -48,3 +48,10 @@ curl -v -H "Content-Type: application/json" -X POST \
 curl -v -H "Content-Type: application/json" -X POST \
      -d '{"username":"jkhandar"}' http://localhost:23456/deletingUser
 
+
+$ curl -X POST -H "Content-Type: application/json" -d
+'{"firstName":"First", "lastName":"Last","email":"user@example.com","user
+name":"username","password":"password"}' localhost:3000/users
+
+$ curl -X POST -H "Content-Type: application/json" -d
+'{"title": "title01", "content": "content01"}' localhost:3000/articles

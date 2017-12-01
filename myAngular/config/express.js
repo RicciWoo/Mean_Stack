@@ -36,11 +36,11 @@ module.exports = function() {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  // serve static files
+  app.use(express.static('./public'));
+
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
-
-  // this must place below the call for routing file
-  app.use(express.static('./public'));
 
   return app;
 };

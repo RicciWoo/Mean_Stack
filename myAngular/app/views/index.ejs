@@ -4,20 +4,47 @@
     <title><%= title %></title>
   </head>
   <body>
-    <% if (userFullName) { %>
-      <h2>Hello <%=userFullName%> </h2>
+    <!-- % if (userFullName) { % -->
+    <% if (user) { %>
+      <!-- h2>Hello <!--%=userFullName%> </h2 -->
       <a href="/signout">Sign out</a>
     <% } else { %>
       <a href="/signup">Signup</a>
       <a href="/signin">Signin</a>
     <% } %>
 
-    <section ng-include="'example/views/example.client.view.html'"></section>
+    <!-- two textboxes -->
+    <!-- use ng-model to bind input to property -->
+    <!-- section>
+       <input type="text" id="text1" ng-model="name">
+       <input type="text" id="text2" ng-model="name">
+    </section -->
+    
+    <!-- include the two textboxes view -->
+    <!-- section ng-include="'example/views/example.client.view.html'"></section -->
 
+    <section ng-view></section>
+
+    <script type="text/javascript">
+       window.user = <%- user || 'null' %>;
+    </script>
+
+    <!-- include angular.js -->
     <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <!-- include angular-route.js -->
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 
+    <!-- add example module file -->
     <script type="text/javascript" src="/example/example.client.module.js"></script>
+    <!-- controller and scope -->
+    <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+    <!-- AngularJS application route -->
+    <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
 
+    <script type="text/javascript" src="/users/users.client.module.js"></script>
+    <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+    <!-- include main application module application.js -->
     <script type="text/javascript" src="/application.js"></script>
   </body>
 </html>

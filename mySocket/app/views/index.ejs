@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://angularjs.org">
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <!-- % if (userFullName) { % -->
+    <!-- % if (user) { % -->
+        <!-- h2>Hello <!-- %=userFullName%> </h2 -->
+        <!-- a href="/signout">Sign out</a -->
+    <!-- % } else { % -->
+        <!-- a href="/signup">Signup</a -->
+        <!-- a href="/signin">Signin</a -->
+    <!-- % } % -->
+
+    <section ng-view></section>
+
+    <script type="text/javascript">
+      window.user = <%- user || 'null' %>;
+    </script>
+
+    <!-- load the Socket.io client -->
+    <script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+    <!-- load local libraries -->
+    <!-- include angular.js -->
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <!-- include angular-route.js -->
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+    <!-- load the articles module -->
+    <script type="text/javascript" src="/articles/articles.client.module.js"></script>
+    <script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+    <script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+    <script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
+
+    <!-- load the example module -->
+    <script type="text/javascript" src="/example/example.client.module.js"></script>
+    <!-- controller and scope -->
+    <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+    <!-- AngularJS application route -->
+    <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
+
+    <!-- load the users module -->
+    <script type="text/javascript" src="/users/users.client.module.js"></script>
+    <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+    <!-- script tyoe="text/javascript" src="/users/services/allusers.client.service.js"></script -->
+
+    <!-- load the chat module -->
+    <script type="text/javascript" src="/chat/chat.client.module.js"></script>
+    <script type="text/javascript" src="/chat/services/socket.client.service.js"></script>
+    <script type="text/javascript" src="/chat/controllers/chat.client.controller.js"></script>
+    <script type="text/javascript" src="/chat/config/chat.client.routes.js"></script>
+
+    <!-- Bootstrap AngularJS Application -->
+    <script type="text/javascript" src="/application.js"></script>
+  </body>
+</html>

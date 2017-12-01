@@ -1,0 +1,18 @@
+<!-- two textboxes view -->
+<section ng-controller=ExampleController>
+  <!-- input type=text id=text1 ng-model=name -->
+  <!-- input type=text id=text2 ng-model=name -->
+	<div data-ng-show="!authentication.user">
+		<a href="/signup">Signup</a>
+		<a href="/signin">Signin</a>
+	</div>
+	<div data-ng-show="authentication.user">
+		<h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>
+		<a href="/signout">Signout</a>
+		<ul>
+			<li><a href="/#!/chat">Chat</a></li>
+			<li><a href="/#!/articles">List Articles</a></li>
+			<li><a href="/#!/articles/create">Create Article</a></li>
+		</ul>
+	</div>
+</section>
