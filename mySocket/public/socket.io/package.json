@@ -68,7 +68,7 @@
   "dependencies": {
     "component-bind": "1.0.0",
     "component-emitter": "1.1.2",
-    "debug": "0.7.4",
+    "debug": "2.6.9",
     "engine.io-client": "1.4.0",
     "has-binary": "0.1.5",
     "indexof": "0.0.1",
